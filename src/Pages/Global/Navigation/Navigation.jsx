@@ -8,6 +8,7 @@ import '../Navigation/style.css'
 // import ProfilesDropDown from './ProfilesDropDown';
 
 
+
 class Navigation extends React.Component {
    state = {
       dropdownOpen: false,
@@ -36,17 +37,18 @@ class Navigation extends React.Component {
       }
    }
 
-   handleSearch = async(ev) => {
-      if(ev.target.value.length > 2){
-      let response = await fetch("https://linkedinmockup.herokuapp.com/profiles" + ev.target.value, {
-         method: "GET",
-      })
-      let usersData = await response.json()
-      this.setState({
-            search: usersData
-      })
-     }
-   }
+   // handleSearch = async(ev) => {
+   //    if(ev.target.value.length > 2){
+   //    let response = await fetch("https://linkedinmockup.herokuapp.com/profiles" + ev.target.value, {
+   //       method: "GET",
+   //    })
+   //    let usersData = await response.json()
+   //    this.setState({
+   //          search: usersData
+   //    })
+   //   }
+   // }
+   
     render() {
       return (
          <Navbar className="nav-top" expand="lg">
@@ -82,36 +84,39 @@ class Navigation extends React.Component {
                <Collapse isOpen={this.state.isOpen} navbar>
                <NavItem>
                   <div className="nav-item-div">
-                     <FontAwesomeIcon className="nav-icon" icon={faNewspaper}/>
-                     <NavLink href="#">Newsfeed</NavLink>
+                     <Link to="/profile/:id" style={{ textDecoration: 'none'}} >
+                     <div className="profile-image-div"></div>
+                     <NavLink href="/profile/:ids">Me</NavLink>
+                     </Link>
                   </div>
                </NavItem>
 
                <NavItem>
                   <div className="nav-item-div">
-                     <Link to="/profiles" />
+                     <Link to="/posts/:id" style={{ textDecoration: 'none'}} >
+                     <FontAwesomeIcon className="nav-icon" icon={faNewspaper}/>
+                     <NavLink href="Newsfeed">Newsfeed</NavLink>
+                     </Link>
+                  </div>
+               </NavItem>
+               
+               <NavItem>
+                  <div className="nav-item-div">
+                     <Link to="/im" style={{ textDecoration: 'none'}}>  
+                     <FontAwesomeIcon className="nav-icon" icon={faComments}/>
+                     <NavLink href="Chat">Chat</NavLink>
+                     </Link>
+                  </div>
+               </NavItem>
+
+               <NavItem>
+                  <div className="nav-item-div">
+                     <Link to="/app" />
                      <FontAwesomeIcon className="nav-icon" icon={faUsers}/>
                      <NavLink href="#" active>My Network</NavLink>
                   </div>
                </NavItem>
-               
-               <NavItem>
-                  <div className="nav-item-div">
-                     <Link to="/Newsfeed" style={{ textDecoration: 'none'}}>  
-                     <FontAwesomeIcon className="nav-icon" icon={faComments}/>
-                     <NavLink href="#">Chat</NavLink>
-                     </Link>
-                  </div>
-               </NavItem>
-               
-               <NavItem>
-                  <div className="nav-item-div">
-                     <Link to="/Profile" style={{ textDecoration: 'none'}} >
-                     <div className="profile-image-div"></div>
-                     <NavLink href="#">Me</NavLink>
-                     </Link>
-                  </div>
-               </NavItem>
+              
                <div className="vl d-lg-inline-block d-none"></div>
                
                <NavItem>

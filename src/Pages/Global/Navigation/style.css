@@ -41,14 +41,16 @@
   font-size: 12px;
   text-align: center;
   margin: 8px 0px 0px;
+  /* justify-content: space-between; where does this go so it works?!*/
 }
 
-/* .nav-link:hover,
+.nav-link:hover,
 .nav-icon:hover {
   color: white;
-} */
+}
 
-.profile-image-div {
+.profile-image-div:hover {
+    color: whitesmoke;
   background-image: url("https://picsum.photos/200");
   background-size: cover;
   margin-left: 20px !important;
@@ -62,4 +64,6 @@
 .vl {
   border-left: 1px solid white;
   height: 51px;
+  margin-left: 8px;
+  margin-right: 5px;
 }
