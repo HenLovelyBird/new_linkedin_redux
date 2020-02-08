@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { Button, Row, Col } from 'reactstrap'
 import { useTranslation } from "react-i18next"
+import '../Login/style.css'
 
 function LoginTranslator() {
 
@@ -10,10 +11,11 @@ function LoginTranslator() {
 
     return (
         <Row>
-           <h4>{t("welcome")}</h4> 
+           <h5>{t("welcome")}</h5> 
            <h5>{t("signinMsg")}</h5>
            <Col>
-           <Button color="info" 
+           <Button id="cl-btn"
+                    color="info" 
                     size="sm" 
                     style={{marginBottom: "2em", color: "black"}}
                     onClick={() => { 

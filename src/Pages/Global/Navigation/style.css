@@ -49,8 +49,7 @@
   color: white;
 }
 
-.profile-image-div:hover {
-    color: whitesmoke;
+.profile-image-div {
   background-image: url("https://picsum.photos/200");
   background-size: cover;
   margin-left: 20px !important;

@@ -19,7 +19,7 @@ ReactDOM.render(
             <Navigation />
         <Switch>
             <Route path="/App" component={Login} />
-            <Route path="/profile/:id" component={Profile} />
+            <Route path="/profile" component={Profile} />
             <Route path="/posts/:id" component={Newsfeed} />
             <Route path="/im" component={Chat} />
         </Switch>

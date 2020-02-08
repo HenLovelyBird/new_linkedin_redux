@@ -5,23 +5,24 @@ import {
   Button,
 } from 'reactstrap';
 import '../Login/style.css';
-import LoginTranslator from './LoginTranslator';
+import { Link } from 'react-router-dom'
+// import LoginTranslator from './LoginTranslator';
 
 class Loginpage extends Component {
   render() {
     return (
       <Container className="login-container">
         <h2 style={{marginTop: "5px"}}>Sign In</h2>
-        <LoginTranslator />
+        {/* <LoginTranslator /> */}
         <Form className="form">
           <Col>
             <FormGroup>
               <Label>Email</Label>
               <Input
-                type="email"
-                name="email"
-                id="exampleEmail"
-                placeholder="myemail@email.com"
+                type="name"
+                name="username"
+                id="username"
+                placeholder="MyUserName"
               />
             </FormGroup>
           </Col>
@@ -35,8 +36,11 @@ class Loginpage extends Component {
                 placeholder="********"
               />
             </FormGroup>
+            
           </Col>
-          <Button id="submit-btn" color="primary">Submit</Button>
+          <Button id="submit-btn" color="primary">
+            <Link to='/profile'>Submit</Link>
+          </Button>
         </Form>
       </Container>
     );
