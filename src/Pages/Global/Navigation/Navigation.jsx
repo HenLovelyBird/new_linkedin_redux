@@ -3,7 +3,7 @@ import {Nav, Collapse, NavbarToggler, NavItem,InputGroupAddon, Input, NavLink,In
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import {Link} from 'react-router-dom'
-import { faBriefcase, faSearch, faHome, faUsers, faComments, faBell, faTh } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faHome, faUsers, faComments, faNewspaper, } from '@fortawesome/free-solid-svg-icons'
 import '../Navigation/style.css'
 // import ProfilesDropDown from './ProfilesDropDown';
 
@@ -51,10 +51,10 @@ class Navigation extends React.Component {
       return (
          <Navbar className="nav-top" expand="lg">
             <Nav style={{margin: "0 auto"}}> 
-               <NavbarBrand href="/">
+               <NavbarBrand href="/" className="navitems">
                   <FontAwesomeIcon className="linkedin-icon" icon={faLinkedin}/>
                </NavbarBrand>
-               <NavItem>
+               <NavItem >
                   <div className="search-div">
                      <InputGroup className="search-input">
                         <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDropdown}>
@@ -75,42 +75,35 @@ class Navigation extends React.Component {
                            </DropdownMenu>
                         </Dropdown>
                      </InputGroup>
-                  </div>
+                  </div> 
                </NavItem>
+               
                <NavbarToggler onClick={this.handleCollapse} />
                <Collapse isOpen={this.state.isOpen} navbar>
                <NavItem>
                   <div className="nav-item-div">
-                     <FontAwesomeIcon className="nav-icon" icon={faHome}/>
-                     <NavLink href="#">Home</NavLink>
+                     <FontAwesomeIcon className="nav-icon" icon={faNewspaper}/>
+                     <NavLink href="#">Newsfeed</NavLink>
                   </div>
                </NavItem>
+
                <NavItem>
                   <div className="nav-item-div">
+                     <Link to="/profiles" />
                      <FontAwesomeIcon className="nav-icon" icon={faUsers}/>
                      <NavLink href="#" active>My Network</NavLink>
                   </div>
                </NavItem>
-               <NavItem>
-                  <div className="nav-item-div">
-                     <FontAwesomeIcon className="nav-icon" icon={faBriefcase}/>
-                     <NavLink href="#">Jobs</NavLink>
-                  </div>
-               </NavItem>
+               
                <NavItem>
                   <div className="nav-item-div">
                      <Link to="/Newsfeed" style={{ textDecoration: 'none'}}>  
                      <FontAwesomeIcon className="nav-icon" icon={faComments}/>
-                     <NavLink href="#">Messaging</NavLink>
+                     <NavLink href="#">Chat</NavLink>
                      </Link>
                   </div>
                </NavItem>
-               <NavItem>
-                  <div className="nav-item-div">
-                     <FontAwesomeIcon className="nav-icon" icon={faBell}/>
-                     <NavLink href="#">Notifications</NavLink>
-                  </div>
-               </NavItem>
+               
                <NavItem>
                   <div className="nav-item-div">
                      <Link to="/Profile" style={{ textDecoration: 'none'}} >
@@ -120,18 +113,7 @@ class Navigation extends React.Component {
                   </div>
                </NavItem>
                <div className="vl d-lg-inline-block d-none"></div>
-               <NavItem>
-                  <div className="nav-item-div">
-                     <FontAwesomeIcon className="nav-icon" icon={faTh}/>
-                     <NavLink href="#">Work</NavLink>
-                  </div>
-               </NavItem>
-               <NavItem>
-                  <div className="nav-item-div">
-                     <FontAwesomeIcon className="nav-icon" icon={faHome}/>
-                     <NavLink href="#">Learning</NavLink>
-                  </div>
-               </NavItem>
+               
                <NavItem>
                   <div className="nav-item-div">
                      <FontAwesomeIcon className="nav-icon" icon={faHome}/>
