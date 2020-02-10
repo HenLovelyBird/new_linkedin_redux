@@ -38,7 +38,7 @@ class Loginpage extends Component {
             </FormGroup>
             
           </Col>
-          <Button id="submit-btn" color="primary">
+          <Button id="submit-btn">
             <Link to='/profile'>Submit</Link>
           </Button>
         </Form>
