@@ -2,19 +2,31 @@ import React from "react";
 import { Jumbotron, Container, Col, Row, Button } from "reactstrap";
 import "../Profile/style.css";
 import ProfileInfo from "./Components/ProfileInfo";
+import GETProfile from '../../APIs/Profile/getProfile.js'
+
 
 class Profile extends React.Component {
   state = {
-    user: "",
     profile: {}
   };
+  
+  componentDidMount = async () => {
+    let response = await GETProfile();
+    this.setState({
+      profile: response
+    })
+    console.log(response)
+  }
   render() {
+    
+    const greeting = `Hello, ${this.state.profile.firstname}!`
+
     return (<>
       <Jumbotron fluid id="bg-cover">
         <Container fluid>
           <Row >
             <Col>
-              <h2 >Hello, {this.state.user}! Welcome Back!</h2>
+              <h2 id="greeting">{greeting}</h2>
               <br />
               <img
                 id="profpic"
@@ -26,7 +38,7 @@ class Profile extends React.Component {
         </Container>
       </Jumbotron>
 
-      <ProfileInfo />
+      <ProfileInfo profile={this.state.profile} />
 
     </>);
   }

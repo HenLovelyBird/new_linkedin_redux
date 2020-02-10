@@ -9,6 +9,11 @@ import { Link } from 'react-router-dom'
 // import LoginTranslator from './LoginTranslator';
 
 class Loginpage extends Component {
+  state = {
+    username: "",
+    password: ""
+  }
+   //call an api w username and password
   render() {
     return (
       <Container className="login-container">
