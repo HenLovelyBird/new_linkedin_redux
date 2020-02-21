@@ -102,7 +102,7 @@ class Navigation extends React.Component {
                
                <NavItem>
                   <div className="nav-item-div">
-                     <Link to="/im" style={{ textDecoration: 'none'}}>  
+                     <Link to="/messages" style={{ textDecoration: 'none'}}>  
                      <FontAwesomeIcon className="nav-icon" icon={faComments}/>
                      <NavLink href="Chat">Chat</NavLink>
                      </Link>

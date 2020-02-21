@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css';
 import Navigation from './Pages/Global/Navigation/Navigation'
-import Login from './App';
+import Login from './Pages/Login/LoginPage';
+import Registration from './Pages/Registration/index'
 import Profile from './Pages/Profile'
 import Newsfeed from './Pages/Newsfeed'
 import Chat from './Pages/Chat/Chat'
@@ -18,9 +19,10 @@ ReactDOM.render(
     <Router>
             <Navigation />
         <Switch>
-            <Route path="/login" component={Login} />
+            <Route path="/signin" component={Login} />
+            <Route path="/signup" component={Registration} />
             <Route path="/profile" component={Profile} />
-            <Route path="/posts/:id" component={Newsfeed} />
+            <Route path="/posts" component={Newsfeed} />
             <Route path="/messages" component={Chat} />
         </Switch>
     </Router>

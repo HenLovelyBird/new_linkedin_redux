@@ -3,6 +3,7 @@ export default (state = {}, action) => {
       case "SET_LOGIN":
         return {
           ...state,
+          userToken: action.payload.user,
           currentUser: action.payload.user,
           currentPassword: action.payload.pass
         };

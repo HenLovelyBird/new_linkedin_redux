@@ -2,7 +2,7 @@
 const URL = "https://linkedinmockupserver.azurewebsites.net/profiles" 
 const headers = new Headers({
     "Content-Type": "application/json",
-    "Authorization": "Bearer" + "token"
+    "Authorization": "Bearer" + localStorage.getItem('token')
 });
 
 const GETProfile = async () => {

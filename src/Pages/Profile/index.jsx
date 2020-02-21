@@ -28,6 +28,10 @@ class Profile extends React.Component {
     console.log(response)
   }
 
+  // uploadPic = async () => {
+
+  // }
+
   render() {
     // const greeting = `Hello, ${this.state.profile.username}!`
     return (<>
@@ -42,7 +46,7 @@ class Profile extends React.Component {
                 src="https://picsum.photos/200"
                 alt="profile pic"
               />
-              <Col><Button value="edit" id="editpic-btn">Upload a New Pic</Button></Col>
+              <Col><Button value="edit" id="editpic-btn" >Upload a New Pic</Button></Col>
               
             </Col>
           </Row>

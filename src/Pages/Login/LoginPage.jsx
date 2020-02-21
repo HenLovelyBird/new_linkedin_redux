@@ -11,9 +11,22 @@ import { Link } from 'react-router-dom'
 class Loginpage extends Component {
   state = {
     username: "",
-    password: ""
+    password: "",
+    token: undefined
   }
-   //call an api w username and password
+
+  login = async()=>{
+    let response = await fetch(`https://linkedinmockupserver.azurewebsites.net/profiles/${this.state.token}`)
+    if(response.ok){
+        // this.props.history.push('/Profile')
+        console.log("response ok")
+        this.props.handleLogin(this.state.token)
+    } else {
+        this.setState({
+            error: true
+        })
+    }
+}
   render() {
     return (
       <Container className="login-container">
@@ -43,7 +56,7 @@ class Loginpage extends Component {
             </FormGroup>
             
           </Col>
-          <Button id="submit-btn">
+          <Button id="submit-btn" onClick={this.login}>
             <Link to='/profile'>Submit</Link>
           </Button>
         </Form>

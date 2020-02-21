@@ -22,7 +22,10 @@
 }
 
 #editpic-btn {
-    justify-content: end;
+    background-color: #233e4c;
+    color: white;
+    margin-left: 250px;
+    margin-top: 20px;
 }
 
 /* Get Profile Info: */
