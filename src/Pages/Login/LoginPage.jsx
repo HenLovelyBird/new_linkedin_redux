@@ -16,11 +16,19 @@ class Loginpage extends Component {
   }
 
   login = async()=>{
-    let response = await fetch(`https://linkedinmockupserver.azurewebsites.net/profiles/${this.state.token}`)
+    let response = await fetch(`http://localhost:7000/users/signin`, {
+    method: "POST",
+    body: JSON.stringify({ username: this.state.username, password: this.state.password}),
+    headers: {
+      "Content-Type": "application/json"
+    }
+
+    })
     if(response.ok){
         // this.props.history.push('/Profile')
+        const token = (await response.json()).access_token
         console.log("response ok")
-        this.props.handleLogin(this.state.token)
+        this.props.handleLogin(token)
     } else {
         this.setState({
             error: true
@@ -40,6 +48,8 @@ class Loginpage extends Component {
                 type="name"
                 name="username"
                 id="username"
+                value={this.state.username}
+                onChange={(e) => this.setState({ username: e.target.value})}
                 placeholder="MyUserName"
               />
             </FormGroup>
@@ -51,6 +61,8 @@ class Loginpage extends Component {
                 type="password"
                 name="password"
                 id="examplePassword"
+                value={this.state.password}
+                onChange={(e) => this.setState({ password: e.target.value})}
                 placeholder="********"
               />
             </FormGroup>
