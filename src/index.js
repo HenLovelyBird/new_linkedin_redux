@@ -6,7 +6,7 @@ import Navigation from './Pages/Global/Navigation/Navigation'
 import Login from './App';
 import Profile from './Pages/Profile'
 import Newsfeed from './Pages/Newsfeed'
-import Chat from './Pages/Chat'
+import Chat from './Pages/Chat/Chat'
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import configureStore from './store'
@@ -21,7 +21,7 @@ ReactDOM.render(
             <Route path="/login" component={Login} />
             <Route path="/profile" component={Profile} />
             <Route path="/posts/:id" component={Newsfeed} />
-            <Route path="/im" component={Chat} />
+            <Route path="/messages" component={Chat} />
         </Switch>
     </Router>
 </Provider>, document.getElementById('root'));
