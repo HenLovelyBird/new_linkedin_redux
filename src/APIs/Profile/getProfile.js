@@ -1,6 +1,8 @@
-const URL = "https://linkedinmockup.herokuapp.com/profiles/5e2b0f3b27480c54f90d34c3"
+
+const URL = "https://linkedinmockupserver.azurewebsites.net/profiles" 
 const headers = new Headers({
-    "Content-Type": "application/json"
+    "Content-Type": "application/json",
+    "Authorization": "Bearer" + "token"
 });
 
 const GETProfile = async () => {

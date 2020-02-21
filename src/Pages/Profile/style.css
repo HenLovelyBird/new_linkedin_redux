@@ -21,6 +21,10 @@
     height: auto;
 }
 
+#editpic-btn {
+    justify-content: end;
+}
+
 /* Get Profile Info: */
 #profcontainer {
     border: .5px solid black;

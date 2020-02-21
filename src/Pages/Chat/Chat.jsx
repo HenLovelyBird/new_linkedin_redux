@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Input, Row, Container, Col } from 'reacstrap'
+import { Button, Input, Row, Container, Col } from 'reactstrap'
 import io from "socket.io-client"
 // import Moment from 'react-moment';
 
